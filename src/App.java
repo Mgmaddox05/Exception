@@ -3,23 +3,27 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        
-        
-        try {
-            System.out.print("Enter an integer: ");
-            String integer = scan.nextLine();
-            if (!integer.equals("exit"))
-            {
-                 int integerTru = Integer.parseInt(integer);
-                 factor(integerTru);
-            }
-            
-    
-        }
-        catch (InputMismatchException e)
+        String integer = "";
+        while (!integer.equals("exit"))
         {
-            System.out.println( "Invaild Input. Please enter an integer Goofy!");
-        }
+            try {
+                System.out.print("Enter an integer: ");
+                integer = scan.nextLine();
+                if (!integer.equals("exit"))
+                {
+                    int integerTru = Integer.parseInt(integer);
+                    factor(integerTru);
+                }
+                
+        
+            }
+            // When there are more than one possible exception that needs to be caught use the data type "Exception" 
+            // Which is a class that covers all of the exceptions possible
+            catch (Exception e)
+            {
+                System.out.println( "Invaild Input. Please enter an integer Goofy!");
+            }
+    }
 
 
     }
